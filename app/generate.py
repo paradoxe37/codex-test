@@ -1,5 +1,5 @@
-import os
+import os, sys
+name = sys.argv[1] if len(sys.argv)>1 else 'Mon Site'
 os.makedirs('app/templates', exist_ok=True)
-open('app/templates/about.html','w').write('<h1>About page</h1>')
-open('app/templates/services.html','w').write('<h1>Services page</h1>')
-open('app/templates/contact.html','w').write('<h1>Contact page</h1>')
+html = f'<h1>{name}</h1><p>Site généré automatiquement 🚀</p>'
+open('app/templates/index.html','w').write(html)
